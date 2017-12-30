@@ -13,6 +13,7 @@
     <link href="/css/core.min.css" rel="stylesheet">
     <link href="/css/app.min.css" rel="stylesheet">
     <link href="/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -72,6 +73,11 @@
     <!-- Scripts -->
     <script src="/js/core.min.js"></script>
     <script src="/js/app.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" charset="utf-8"></script>
     <script src="/js/script.min.js"></script>
+    @include('admins.inc.message')
+    @section('js')
+
+    @show
   </body>
 </html>

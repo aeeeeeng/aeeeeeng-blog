@@ -12795,6 +12795,9 @@ ul.flexbox{
 .sidebar .menu-item.active>.menu-link{
     color:#616a78
 }
+.sidebar .menu-submenu .menu-item.active>.menu-link{
+  color:#fff;
+}
 .sidebar .menu-item.active>.menu-link .title small{
     opacity:.8
 }
