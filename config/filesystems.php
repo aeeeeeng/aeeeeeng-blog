@@ -43,6 +43,16 @@ return [
 
     'disks' => [
 
+        'adminOriImage' => [
+          'driver' => 'local',
+          'root' => public_path('/img/admin_image/original'),
+        ],
+
+        'adminThumbImage' => [
+          'driver' => 'local',
+          'root' => public_path('/img/admin_image/thumb'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

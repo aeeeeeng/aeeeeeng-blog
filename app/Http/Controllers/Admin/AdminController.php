@@ -10,6 +10,7 @@ use App\Admin;
 use Image;
 use Session;
 use DB;
+use Storage;
 use Yajra\Datatables\Datatables;
 
 class AdminController extends Controller
@@ -71,6 +72,20 @@ class AdminController extends Controller
          return false;
     }
 
+    private function imageDelete(Admin $admin)
+    {
+      $existOri = Storage::disk("adminOriImage")->exists($admin->admin_image);
+      $existThumb = Storage::disk("adminThumbImage")->exists($admin->admin_image);
+      if (isset($admin->admin_image) && $existOri && $existThumb) {
+        $deleteOri = Storage::disk("adminOriImage")->delete($admin->admin_image);
+        $deleteThumb = Storage::disk("adminThumbImage")->delete($admin->admin_image);
+        if($deleteOri && $deleteThumb){
+          return true;
+        }
+        return false;
+      }
+    }
+
     public function store(AdminRequest $request)
     {
       $admin = new Admin;
@@ -115,9 +130,18 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
-        //
+      $admin = Admin::find($id);
+      $admin->name = $request->input('name');
+      $admin->email = $request->input('email');
+      if ($request->hasFile("admin_image")) {
+        $this->imageDelete($admin);
+        $admin->admin_image = $this->imageUpload($request);
+      }
+      $admin->save();
+      Session::flash("flash_message", "Data has been updated.");
+      return redirect("/admin03061993/admin");
     }
 
     /**
@@ -128,6 +152,9 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $result = array();
+      $admin = Admin::find($id);
+      $out["success"] = ($this->imageDelete($admin) && $admin->delete()) ? true : false;
+      return $out;
     }
 }

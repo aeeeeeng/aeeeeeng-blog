@@ -7,7 +7,7 @@
     <ul class="topbar-btns">
       {{-- user --}}
       <li class="dropdown">
-        <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" src="/img/avatar/1.jpg" alt="..."></span>
+        <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" src="{{asset("img/admin_image/thumb/".Auth::user()->admin_image)}}" alt="..."></span>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="#"><i class="ti-lock"></i> Lock</a>
           <a class="dropdown-item" href="#"

@@ -7,8 +7,11 @@
     <div class="card">
       <h4 class="card-title">Admin Management</h4>
       <div class="card-body">
-        
-        {!! Form::open(['action'=>'Admin\AdminController@store', 'method'=>'post', "files"=>true]) !!}
+        @if (!empty($name))
+          {!! Form::open(['action'=>['Admin\AdminController@update', $id], 'method'=>'post', "files"=>true]) !!}
+        @else
+          {!! Form::open(['action'=>'Admin\AdminController@store', 'method'=>'post', "files"=>true]) !!}
+        @endif
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
@@ -47,10 +50,13 @@
                 <label><i class="fa fa-save"></i></label>
                 Save
               </button>
-              <button type="button" onclick="window.history.back();" class="btn btn-label btn-secondary pull-right">
+              @if (!empty($id))
+                {{Form::hidden("_method", "PUT")}}
+              @endif
+              <a href="/admin03061993/admin" class="btn btn-label btn-secondary pull-right">
                 <label><i class="fa fa-arrow-left"></i></label>
                 Back
-              </button>
+              </a>
             </div>
           </div>
         {!! Form::close() !!}
