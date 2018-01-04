@@ -23,6 +23,12 @@ Route::prefix("admin03061993")->group(function(){
 
   Route::resource("/admin", "Admin\AdminController");
   Route::get("/admin-datatable", "Admin\AdminController@adminDatatable")->name("admin.datatable");
+
+  Route::resource("/category", "Admin\CategoryController");
+  Route::get("/category-datatable", "Admin\CategoryController@categoryDatatable")->name("category.dataTable");
+
+  Route::resource("/tag", "Admin\TagController");
+  Route::get("/tag-datatable", "Admin\TagController@tagDatatable")->name("tag.datatable");
 });
 
 Auth::routes();

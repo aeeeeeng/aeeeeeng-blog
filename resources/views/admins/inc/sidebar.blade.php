@@ -19,7 +19,7 @@
         </a>
       </li>
 
-      <li class="menu-item {{active(["admin03061993/admin", "admin03061993/admin/*"], 'active open')}}">
+      <li class="menu-item {{active(["admin03061993/admin", "admin03061993/admin/*", "admin03061993/category", "admin03061993/category/*", "admin03061993/tag", "admin03061993/tag/*"], 'active open')}}">
         <a class="menu-link" href="#">
           <span class="icon fa fa-folder-open"></span>
           <span class="title">Data Master</span>
@@ -27,10 +27,22 @@
         </a>
 
         <ul class="menu-submenu">
-          <li class="menu-item {{active(["admin03061993/admin", "admin03061993/admin/*"])}}">
+          <li class="menu-item {{active(["admin03061993/admin", "admin03061993/admin/*", ])}}">
             <a class="menu-link" href="/admin03061993/admin">
               <span class="dot"></span>
               <span class="title">Admins</span>
+            </a>
+          </li>
+          <li class="menu-item {{active(["admin03061993/category", "admin03061993/category/*"])}}">
+            <a class="menu-link" href="/admin03061993/category">
+              <span class="dot"></span>
+              <span class="title">Category</span>
+            </a>
+          </li>
+          <li class="menu-item {{active(["admin03061993/tag", "admin03061993/tag/*"])}}">
+            <a class="menu-link" href="/admin03061993/tag">
+              <span class="dot"></span>
+              <span class="title">Tags</span>
             </a>
           </li>
         </ul>

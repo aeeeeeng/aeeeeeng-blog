@@ -53,6 +53,16 @@ return [
           'root' => public_path('/img/admin_image/thumb'),
         ],
 
+        'categoryOriImage' => [
+          'driver' => 'local',
+          'root' => public_path('/img/category_image/original'),
+        ],
+
+        'categoryThumbImage' => [
+          'driver' => 'local',
+          'root' => public_path('/img/category_image/thumb'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
