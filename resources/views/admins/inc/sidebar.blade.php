@@ -47,6 +47,22 @@
           </li>
         </ul>
       </li>
+      <li class="menu-item {{active(["admin03061993/blog", "admin03061993/blog/*"], 'active open')}}">
+        <a class="menu-link" href="#">
+          <span class="icon fa fa-pencil-square-o"></span>
+          <span class="title">Blog</span>
+          <span class="arrow"></span>
+        </a>
+
+        <ul class="menu-submenu">
+          <li class="menu-item {{active(["admin03061993/blog", "admin03061993/blog/*", ])}}">
+            <a class="menu-link" href="/admin03061993/blog">
+              <span class="dot"></span>
+              <span class="title">Post</span>
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 

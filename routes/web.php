@@ -29,6 +29,8 @@ Route::prefix("admin03061993")->group(function(){
 
   Route::resource("/tag", "Admin\TagController");
   Route::get("/tag-datatable", "Admin\TagController@tagDatatable")->name("tag.datatable");
+
+  Route::resource("/blog", "Admin\BlogController");
 });
 
 Auth::routes();
