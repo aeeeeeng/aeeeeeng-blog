@@ -63,6 +63,21 @@ return [
           'root' => public_path('/img/category_image/thumb'),
         ],
 
+        'posterBlogOri' => [
+          'driver' => 'local',
+          'root' => public_path('/img/poster_blog/original'),
+        ],
+
+        'posterBlogThumb' => [
+          'driver' => 'local',
+          'root' => public_path('/img/poster_blog/thumb'),
+        ],
+
+        "pdfFile" => [
+          "driver" => "local",
+          "root" => public_path("/pdf_file")
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
